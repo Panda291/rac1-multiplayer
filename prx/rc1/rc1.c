@@ -220,9 +220,13 @@ void unlock_item(int item_id, uint8_t equip) {
             break;
         case 0x34: // Premium Nanotech
             *((bool*)0x96bff4) = true;
+            *((u32*)0x71fb28) = 5;
+            *((u32*)0x96bf88) = 5;
             break;
         case 0x35: // Ultra Nanotech
             *((bool*)0x96bff5) = true;
+            *((u32*)0x71fb28) = 8;
+            *((u32*)0x96bf88) = 8;
             break;
         default:
             SHK_CALL_HOOK(_unlock_item, item_id, equip);
